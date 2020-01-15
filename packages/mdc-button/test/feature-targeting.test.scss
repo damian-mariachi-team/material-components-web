@@ -1,0 +1,25 @@
+@import "@material/button/mixins";
+@import "@material/feature-targeting/functions";
+
+@mixin feature-targeting-test($query) {
+  .mdc-test {
+    @include mdc-button-core-styles($query: $query);
+    @include mdc-button-filled-accessible(red, $query: $query);
+    @include mdc-button-container-fill-color(red, $query: $query);
+    @include mdc-button-outline-color(red, $query: $query);
+    @include mdc-button-icon-color(red, $query: $query);
+    @include mdc-button-ink-color(red, $query: $query);
+    @include mdc-button-shape-radius(0, $query: $query);
+    @include mdc-button-horizontal-padding(0, $query: $query);
+    @include mdc-button-outline-width(0, $query: $query);
+    @include mdc-button-ripple($query: $query);
+    @include mdc-button-without-ripple($query: $query);
+    @include mdc-button-theme-baseline($query: $query);
+    @include mdc-button-density(-1, $query: $query);
+    @include mdc-button-height(0, $query: $query);
+    @include mdc-button-label-overlow-ellipsis($query: $query);
+  }
+}
+
+// @include feature-targeting-test(feature.all());
+@include feature-targeting-test(mdc-feature-any());
